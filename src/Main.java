@@ -9,14 +9,14 @@ public class Main {
         }
 
         System.out.println("The list of random numbers is the following "+ numbers);
-        Set<Integer> set = new TreeSet<>(numbers);
-        System.out.println("The list of sorted in ascending order numbers without repeated numbers is the following "+ set);
-        List<Integer> sortedNumbers = new ArrayList<>(set);
-        if (sortedNumbers.size()>1) {
-            int distance = sortedNumbers.get(0) - sortedNumbers.get(1) - 1;
+        Set<Integer> sortedNumbers = new TreeSet<>(numbers);
+        System.out.println("The list of sorted in ascending order numbers without repeated numbers is the following "+ sortedNumbers);
+        List<Integer> resultedNumbers = new ArrayList<>(sortedNumbers);
+        if (resultedNumbers.size()>1) {
+            int distance = resultedNumbers.get(0) - resultedNumbers.get(1) - 1;
             System.out.println("The distance between two least numbers equals "+ distance);
         }
         else
-            System.out.println("The list of numbers consists from only one number "+ sortedNumbers.get(0));
+            System.out.println("The list of numbers consists from only one number "+ resultedNumbers.get(0));
     }
 }
