@@ -1,14 +1,22 @@
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        String textExample = new String("ABC DFG HIJ");
-        int wordCount = textExample.split(" ").length;
-        System.out.println("Count of words in the text - " + wordCount);
-        for (String word : textExample.split(" ")) {
-            for (int j = word.length() - 1; j >= 0; --j) {
-                System.out.print(word.charAt(j));
-            }
-            System.out.print(" ");
+        List<Integer> numbers = new ArrayList<Integer>();
+        Random rand = new Random();
+        for (int i = 0; i < 10; i++) {
+            numbers.add(i, rand.nextInt(10));
         }
+
+        System.out.println("The list of random numbers is the following "+ numbers);
+        Set<Integer> set = new TreeSet<>(numbers);
+        System.out.println("The list of sorted in ascending order numbers without repeated numbers is the following "+ set);
+        List<Integer> sortedNumbers = new ArrayList<>(set);
+        if (sortedNumbers.size()>1) {
+            int distance = sortedNumbers.get(0) - sortedNumbers.get(1) - 1;
+            System.out.println("The distance between two least numbers equals "+ distance);
+        }
+        else
+            System.out.println("The list of numbers consists from only one number "+ sortedNumbers.get(0));
     }
 }
